@@ -4,41 +4,34 @@
 #include <stdio.h>
 #include <math.h>
 #include <getopt.h>
-int main(int argc, char **argv) {
+#include <string.h>
+int main(int argc, char *argv[]){
+    int dictionary;
+    int option_index = 0;
     
-    int c;
-    int digit_optind = 0;
-    
-    while (1) {
-        int this_option_optind = optind ? optind : 1;
-        int option_index = 0;
-        static struct option long_options[] = {
-            { "kazakh", 2, NULL, 'k' },
-            { "russian", 3, NULL, 'r' }
-        };
-        
-        c = getopt_long(argc, argv, "rk",
-                        long_options, &option_index);
-        if (c == -1)
-            break;
-        
-        switch (c) {
+    struct option long_options[] = {
+        {"russian",optional_argument,NULL,'r'},
+        {"kazakh",optional_argument,NULL,'k'}
+    };
+
+    if((dictionary = getopt_long(argc,argv,"kr",long_options,&option_index))!=-1){
+        switch(dictionary){
             case 'k':
-                printf("Salem \n");
+                printf("salem\n");
                 break;
-                
             case 'r':
-                printf("Privet \n");
+                printf("privet\n");
                 break;
-                
-            case '?':
-                break;
-                
-            default:
-                printf("?? getopt returned character code 0%o ??\n", c);
+        }
+    }else{
+        if(strcmp(argv[0],"./saysalem") == 0){
+            printf("salem\n");
+        }else if (strcmp(argv[0],"./sayprivet") == 0){
+            printf("privet\n");
+        }else if (strcmp(argv[0],"./sayhi") == 0) {
+            printf("sayhi\n");
+            
         }
     }
-    
-
     return 0;
 }
