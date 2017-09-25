@@ -14,7 +14,8 @@ int main(int argc, char *argv[]){
         {"kazakh",optional_argument,NULL,'k'}
     };
 
-    if((dictionary = getopt_long(argc,argv,"kr",long_options,&option_index))!=-1){
+    if((dictionary = getopt_long(argc,argv,"kr",
+                     long_options,&option_index))!=-1){
         switch(dictionary){
             case 'k':
                 printf("salem\n");
@@ -22,16 +23,18 @@ int main(int argc, char *argv[]){
             case 'r':
                 printf("privet\n");
                 break;
+            default:
+                break
         }
     }else{
-        if(strcmp(argv[0],"./saysalem") == 0){
-            printf("salem\n");
-        }else if (strcmp(argv[0],"./sayprivet") == 0){
-            printf("privet\n");
-        }else if (strcmp(argv[0],"./sayhi") == 0) {
+        if (strcmp(argv[0],"./saysalem") == 0) {
             printf("sayhi\n");
-            
         }
+        else if(strcmp(argv[0],"./sayprivet") == 0){
+            printf("salem\n");
+        }else if (strcmp(argv[0],"./sayhi") == 0){
+            printf("privet\n");
+        
     }
     return 0;
 }
