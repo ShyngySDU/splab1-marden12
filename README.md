@@ -1,3 +1,7 @@
+|A|B|C|D|total|
+|-|-|-|-|-|
+|1|0|0|0|`1/4`|
+
 # System Programming Lab 1
 
 In this lab you are to complete 4 tasks and submit them via github classroom. Learn basics of __git__ and __github__. Submit source codes with your _comments_. When creating your _github_ accout use your _stu.sdu.edu.kz_ email.
