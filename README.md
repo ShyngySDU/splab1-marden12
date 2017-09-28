@@ -1,6 +1,6 @@
 |A|B|C|D|total|
 |-|-|-|-|-|
-|1|0|0|0|`1/4`|
+|1|1|1|0|`3/4`|
 
 # System Programming Lab 1
 
